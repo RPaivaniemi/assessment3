@@ -1,20 +1,49 @@
-<!DOCTYPE html>
-body {
-  background-color: lightblue;
-}
-h1 {
-    color:red;
-}
+ /* Set additional styling options for the columns*/
 .column {
-
-  width:50%;
-}
-}
-row {
-    width:100%;
-    display: inline-flex;
-    flex-wrap: wrap;
+  white-space : nowrap; /* this does the trick */
+  overflow-x : hidden; /* this prevents the grey divs from overflowing */
+  vertical-align : top;
+  border-radius : 0px;
+  display : inline-block;
+  padding: 9px;
 }
 h2 {
-    color:blue;
+  outline-color: black;
+  outline-style: solid;
+  outline-width: 0.1px;
+  outline-offset: 10px;
+  width: 100%;
+  height: 5vw;
+  text-wrap: wrap;
+  padding: 10px;
+  font-size: 1.8vw;
+  margin: auto;
+}
+p {
+  outline-color: black;
+  outline-style: solid;
+  outline-width: 0.1px;
+  outline-offset: 8px;
+}
+.row {
+  display: flex;
+}
+a {
+  white-space : nowrap; /* this does the trick */
+  overflow-x : hidden; /* this prevents the grey divs from overflowing */
+  border-radius : 0px;
+  display : left;
+  padding: 9px;
+}
+td {
+  border: 1px solid;
+  width: 100vh;
+  padding: 3px;
+  font-size:2vh;
+}
+        
+table {
+  border-collapse: collapse;
+  width: 100vh;
+  margin: 5px;
 }
