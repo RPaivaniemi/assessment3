@@ -1,21 +1,72 @@
 <html>
     <head>
-      <title>Socio Economic</title>
+        <style>
+    /* Set additional styling options for the columns*/
+        .column {
+            white-space : nowrap; /* this does the trick */
+            overflow-x : hidden; /* this prevents the grey divs from overflowing */
+            vertical-align : top;
+            border-radius : 0px;
+            display : inline-block;
+            padding: 9px;
+        }
+        h2 {
+            outline-color: black;
+            outline-style: solid;
+            outline-width: 0.1px;
+            outline-offset: 10px;
+        }
+        p {
+            outline-color: black;
+            outline-style: solid;
+            outline-width: 0.1px;
+            outline-offset: 8px;
+        }
+        .row {
+            display: flex;
+        }
+        </style>
+    <title>Socio Economic</title>
     </head>
+    <h1>Socio Economic</h1>
     <body>
-     
-        <h1>Socio-Economic Data</h1>
-        
-        {% for row in rows %}
-        <p>Country: 
-          <b> <"Country: "> </b>
-           {{row["Country"]}} | 
-            {{ row["TotalPop"]}} | 
-           {{row['PopDens']}}	| 
-           {{row["GDP_Cap"]}} |
-            {{ row["GDP_Growth"]}} |
-           {{row['LAND']}}	
-        </p>
-        {% endfor %}
+        <div class="row">
+            <div class="column">
+                <h2>Country</h2>
+                {% for row in rows %}
+                <p>{{row["Country"]}}</p>
+                {% endfor %}
+            </div>
+            <div class="column">
+                <h2>Total Population</h2>
+                {% for row in rows %}
+                <p>{{ row["TotalPop"]}}</p>
+                {% endfor %}
+            </div>
+            <div class="column">
+                <h2>Population Density</h2>
+                {% for row in rows %}
+                <p>{{ row["PopDens"]}}</p>
+                {% endfor %}
+            </div>
+            <div class="column">
+                <h2>GDP/Capita</h2>
+                {% for row in rows %}
+                <p>{{ row["GDP_Cap"]}}</p>
+                {% endfor %}
+            </div>
+            <div class="column">
+                <h2>GDP Growth</h2>
+                {% for row in rows %}
+                <p>{{ row["GDP_Growth"]}}</p>
+                {% endfor %}
+            </div>
+            <div class="column">
+                <h2>Land</h2>
+                {% for row in rows %}
+                <p>{{ row["LAND"]}}</p>
+                {% endfor %}
+            </div>
+        </div>
     </body>
-    </html>
+</html>

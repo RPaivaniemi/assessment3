@@ -9,9 +9,9 @@ def index():
     conn = sqlite3.connect('socio_economic_data.db')
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
-    cur.execute("select * from Africa")
+    cur.execute("select * from Global")
     #rows = cur.fetchall()
-    cur.execute("select * from Australasia")
+    #cur.execute("select * from Australasia")
     #rows = cur.fetchall()
     #cur.execute("select * from Europe")
     #rows = cur.fetchall()
