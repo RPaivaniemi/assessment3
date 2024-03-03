@@ -15,6 +15,12 @@
             outline-style: solid;
             outline-width: 0.1px;
             outline-offset: 10px;
+            width: 100%;
+            height: 5vw;
+            text-wrap: wrap;
+            padding: 10px;
+            font-size: 1.8vw;
+            margin: auto;
         }
         p {
             outline-color: black;
@@ -58,31 +64,31 @@
                 {% endfor %}
             </div>
             <div class="column">
-                <h2>Total Population</h2>
+                <h2>Total Population (1000s)</h2>
                 {% for row in rows %}
                 <p>{{ row["TotalPop"]}}</p>
                 {% endfor %}
             </div>
             <div class="column">
-                <h2>Population Density</h2>
+                <h2>Population Density (persons/km2)</h2>
                 {% for row in rows %}
                 <p>{{ row["PopDens"]}}</p>
                 {% endfor %}
             </div>
             <div class="column">
-                <h2>GDP/Capita</h2>
+                <h2>GDP/Capita ($)</h2>
                 {% for row in rows %}
                 <p>{{ row["GDP_Cap"]}}</p>
                 {% endfor %}
             </div>
             <div class="column">
-                <h2>GDP Growth</h2>
+                <h2>GDP Annual Growth Rate(%)</h2>
                 {% for row in rows %}
                 <p>{{ row["GDP_Growth"]}}</p>
                 {% endfor %}
             </div>
             <div class="column">
-                <h2>Land</h2>
+                <h2>Land Area (1000ha)</h2>
                 {% for row in rows %}
                 <p>{{ row["LAND"]}}</p>
                 {% endfor %}
