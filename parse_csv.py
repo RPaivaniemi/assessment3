@@ -59,7 +59,7 @@ print("table dropped successfully");
 conn.execute('CREATE TABLE TropicalAsia (Country TEXT, TotalPop TEXT, PopDens TEXT, GDP_Cap TEXT, GDP_Growth TEXT, LAND TEXT)')
 print("table created successfully");
 
-with open('Database/Socio-Economic_Baseline_Data_Africa.csv', newline='') as f:
+"""with open('Database/Socio-Economic_Baseline_Data_Africa.csv', newline='') as f:
   reader = csv.reader(f, delimiter=",")
   next(reader)
   for row in reader:
@@ -73,7 +73,7 @@ with open('Database/Socio-Economic_Baseline_Data_Africa.csv', newline='') as f:
     LAND = row[11]
 
     cur.execute('INSERT INTO Africa VALUES (?,?,?,?,?,?)', (Country, TotalPop, PopDens, GDP_Cap, GDP_Growth, LAND))
-    conn.commit()
+    conn.commit()"""
 
 with open('Database/Socio-Economic_Baseline_Data_Australasia.csv', newline='') as f:
   reader = csv.reader(f, delimiter=",")
