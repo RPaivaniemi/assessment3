@@ -1,6 +1,2 @@
-source .venv/bin/activate
 pip install --upgrade pip
 pip install flask
-export FLASK_ENV=development
-export FLASK_APP=socio_economic.py
-python3 -m flask run -h 0.0.0.0
