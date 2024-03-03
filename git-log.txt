@@ -1,7 +1,16 @@
+* 6c8168e : Trying to get render working
+* 810a2cc : Changing requirements.txt for Render testing
+* d03c18b : Changing requirements.txt for Render testing
+* 80425fa : Changing requirements.txt for Render testing
+* 9cbf4d6 : Changing requirements.txt for Render testing
+* 2b5fcf4 : Requirements.txt
+* b428c45 : Finalized Product without Readme
+* 02d6216 : Linked table with Country as identifier, /show added, template work
+* b591d91 : Fully working tables without link
 * aedd8dd : Added Individual Tables + Links
 * 378c730 : Global table + styling
 * af48c1b : Testing
 * 0b53a49 : Testing
-* 3a303fe : Working
+* 3a303fe : Parse.csv Added
 * fa46398 : Files to git
 * dc60700 : First commit
