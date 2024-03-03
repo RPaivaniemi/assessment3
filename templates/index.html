@@ -1,0 +1,21 @@
+<html>
+    <head>
+      <title>Socio Economic</title>
+    </head>
+    <body>
+     
+        <h1>Socio-Economic Data</h1>
+        
+        {% for row in rows %}
+        <p>Country: 
+           <b> <a href={{ url_for('show', static = row['Country']) }}>{{row["Country"]}}</a></b> | 
+           {{row["Country"]}} | 
+            {{ row["TotalPop"]}} | 
+           {{row['PopDens']}}	| 
+           {{row["GDP_Cap"]}} |
+            {{ row["GDP_Growth"]}} |
+           {{row['LAND']}}	
+        </p>
+        {% endfor %}
+    </body>
+    </html>
