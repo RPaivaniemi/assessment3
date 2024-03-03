@@ -25,10 +25,30 @@
         .row {
             display: flex;
         }
+        a {
+            white-space : nowrap; /* this does the trick */
+            overflow-x : hidden; /* this prevents the grey divs from overflowing */
+            border-radius : 0px;
+            display : left;
+            padding: 9px;
+        }
+
         </style>
     <title>Socio Economic</title>
     </head>
-    <h1>Socio Economic</h1>
+    <h1>Socio-Economic Baseline Data</h1>
+    <h1>
+    <a href="/" ><button>Global</button></a>
+    <a href="/Africa" ><button>Africa</button></a>
+    <a href="/Australasia" ><button>Australasia</button></a>
+    <a href="/Europe" ><button>Europe</button></a>
+    <a href="/LatinAmerica" ><button>Latin America</button></a>
+    <a href="/MiddleEast" ><button>Middle East</button></a>
+    <a href="/NorthAmerica" ><button>North America</button></a>
+    <a href="/SmallIslandStates" ><button>Small Island States</button></a>
+    <a href="/TemperateAsia" ><button>Temperate Asia</button></a>
+    <a href="/TropicalAsia" ><button>Tropical Asia</button></a>
+    </h1>
     <body>
         <div class="row">
             <div class="column">
