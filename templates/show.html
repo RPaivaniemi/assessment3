@@ -5,14 +5,13 @@
 <body>
  
     <h1>Polar Bear Tagged for Tracking</h1>
-    <p>Bear: 
-        <b>{{bear[0]["BearID"]}}</b> | 
-        {{bear[0]["PTT_ID"]}} | 
-         {{ bear[0]["capture_lat"]}} | 
-        {{bear[0]['capture_long']}}	| 
-        {{bear[0]["Sex"]}} |
-         {{ bear[0]["Age_class"]}} |
-        {{bear[0]['Ear_applied']}}	
+    <p>Country: 
+        <b>{{country[0]["Country"]}}</b> | 
+        {{country[0]["TotalPop"]}} | 
+        {{country[0]['PopDens']}}	| 
+        {{country[0]["GDP_Cap"]}} |
+         {{country[0]["GDP_Growth"]}} |
+        {{country[0]['LAND']}}	
      </p>
      <p>Sightings via Radio Device</p>
     {% for row in rows %}
