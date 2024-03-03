@@ -1,3 +1,8 @@
+#To Start application:
+
+Press Run 
+Press Box URL
+
 #Requirements:
 
 source .venv/bin/activate
