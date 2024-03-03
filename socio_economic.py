@@ -120,4 +120,12 @@ def tropicalasia():
   conn.close()
   return render_template('index.html', rows=rows)
 
-
+@app.route('/show/<Country>')
+def show(Country):
+  conn = sqlite3.connect('socio_economic_data.db')
+  conn.row_factory = sqlite3.Row
+  cur = conn.cursor()
+  cur.execute("select * from individual WHERE Country =?", (Country,),)
+  rows = cur.fetchall()
+  conn.close()
+  return render_template('show.html', rows=rows, Country=Country)

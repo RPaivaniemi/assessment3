@@ -1,29 +1,159 @@
 <html>
-<head>
-  <title>Individual Polar Bear Tracking</title>
-</head>
-<body>
- 
-    <h1>Polar Bear Tagged for Tracking</h1>
-    <p>Country: 
-        <b>{{country[0]["Country"]}}</b> | 
-        {{country[0]["TotalPop"]}} | 
-        {{country[0]['PopDens']}}	| 
-        {{country[0]["GDP_Cap"]}} |
-         {{country[0]["GDP_Growth"]}} |
-        {{country[0]['LAND']}}	
-     </p>
-     <p>Sightings via Radio Device</p>
-    {% for row in rows %}
-    <p>Bear: 
-       <b>{{row["deployment_id"]}}</b> | 
-       {{row["deployID"]}} | 
-        {{ row["received"]}} | 
-       {{row['latitude']}}	| 
-       {{row["longitude"]}} |
-        {{ row["temperature"]}} 	
-    </p>
-    {% endfor %}
-</body>
-</html>
+    <head>
+        <style>
+    /* Set additional styling options for the columns*/
+        .column {
+            white-space : nowrap; /* this does the trick */
+            overflow-x : hidden; /* this prevents the grey divs from overflowing */
+            vertical-align : top;
+            border-radius : 0px;
+            display : inline-block;
+            padding: 9px;
+        }
+        h2 {
+            outline-color: black;
+            outline-style: solid;
+            outline-width: 0.1px;
+            outline-offset: 10px;
+            width: 100%;
+            height: 5vw;
+            text-wrap: wrap;
+            padding: 10px;
+            font-size: 1.8vw;
+            margin: auto;
+        }
+        p {
+            outline-color: black;
+            outline-style: solid;
+            outline-width: 0.1px;
+            outline-offset: 8px;
+        }
+        .row {
+            display: flex;
+        }
+        a {
+            white-space : nowrap; /* this does the trick */
+            overflow-x : hidden; /* this prevents the grey divs from overflowing */
+            border-radius : 0px;
+            display : left;
+            padding: 9px;
+        }
 
+        td {
+        border: 1px solid;
+        width: 100vh;
+        padding: 3px;
+        font-size:2vh;
+        }
+        
+        table {
+          border-collapse: collapse;
+          width: 100vh;
+          margin: 5px;
+        }
+
+        </style>
+    <title>Socio Economic</title>
+    </head>
+    {% for row in rows %}
+    <h1>Socio-Economic data for {{row["Country"]}}</h1>
+    {% endfor %}
+    <h1>
+    <a href="/" ><button>Global</button></a>
+    <a href="/Africa" ><button>Africa</button></a>
+    <a href="/Australasia" ><button>Australasia</button></a>
+    <a href="/Europe" ><button>Europe</button></a>
+    <a href="/LatinAmerica" ><button>Latin America</button></a>
+    <a href="/MiddleEast" ><button>Middle East</button></a>
+    <a href="/NorthAmerica" ><button>North America</button></a>
+    <a href="/SmallIslandStates" ><button>Small Island States</button></a>
+    <a href="/TemperateAsia" ><button>Temperate Asia</button></a>
+    <a href="/TropicalAsia" ><button>Tropical Asia</button></a>
+    </h1>
+    
+    <table>
+  <tr style="font-size:2vh;font-weight:bold;">
+    <strong><td>Country</td>
+    <td>Total Pop. (1000s) 1995</td>
+    <td>Current Pop. Density (persons/km2) 1995</td>
+    <td>Projected Pop. Density (persons/km2) 2025</td>
+    <td>Total Urban Pop. (1000s) 1995</td>
+    <td>Urban Pop. in Coastal Cities (1000s) 1980</td>
+    <td>GDP per Capita in Constant PPP ('85IN$) 1992</td>
+    <td>GDP from Agriculture (%) 1993</td>
+    <td>GDP from Industry (%) 1993</td>
+    <td>GDP from Services (%) 1993</td>
+    <td>GDP Annual Growth Rate (%) 1993</td>
+    <td>Total Land Area (1000ha) 1993</td>
+    <td>Arable and Permanent Cropland (1000ha) 1993</td>
+    <td>Permanent Pasture (1000 ha) 1993</td>
+    <td>Forest and Woodland (1000 ha) 1993</td>
+    <td>Other Land (1000ha) 1993</td>
+    <td>Water Resources per Capita (m3) 1995</td>
+    <td>Domestic Annual Withdraws (%) 1995</td>
+    <td>Industry Annual Withdraws (%) 1995</td>
+    <td>Agriculture Annual Withdraws (%) 1995</td>
+    <td>Irrigated Land (1000ha) 1993</td>
+    <td>Agricultural Labor Force (1000s) 1993</td>
+    <td>Total Labor Force (1000s) 1993</td>
+    <td>Cattle Stocks (1000s) 1994</td>
+    <td>Sheep Stocks (1000s) 1994</td>
+    <td>Goat Stocks (1000s) 1994</td>
+    <td>Pig Stocks (1000s) 1994</td>
+    <td>Equines (horses /mules/asses) (1000s) 1994</td>
+    <td>Buffalo Stocks (1000s) 1994</td>
+    <td>Camel Stocks (1000s) 1994</td>
+    <td>Total Commercial Energy Consumption (PJ) 1993</td>
+    <td>Traditional Fuel Consumption (TJ) 1991</td>
+    <td>Commercial Hydroelectric Consumption (PJ) 1993</td>
+    <td>Known Mammal Species (#) 1990's</td>
+    <td>Endemic Mammal Species (#) 1990's</td>
+    <td>Known Bird Species (#) 1990's</td>
+    <td>Endemic Bird Species (#) 1990's</td>
+    <td>Known Plant Species (#) 1990's</td>
+    
+  </tr>
+  <tr>
+    {% for row in rows %}
+    <td>{{row["Country"]}}</td>
+    <td>{{row["TotalPop"]}}</td>
+    <td>{{row["PopDens"]}}</td>
+    <td>{{row["ProjDens"]}}</td>
+    <td>{{row["UrbanPop"]}}</td>
+    <td>{{row["CoastalUrbanPop"]}}</td>
+    <td>{{row["GDP_Cap"]}}</td>
+    <td>{{row["GDP_Agric"]}}</td>
+    <td>{{row["GDP_Industry"]}}</td>
+    <td>{{row["GDP_Services"]}}</td>
+    <td>{{row["GDP_Growth"]}}</td>
+    <td>{{row["LAND"]}}</td>
+    <td>{{row["CropLAND"]}}</td>
+    <td>{{row["Pasture"]}}</td>
+    <td>{{row["ForestLAND"]}}</td>
+    <td>{{row["OtherLAND"]}}</td>
+    <td>{{row["WaterCAP"]}}</td>
+    <td>{{row["DomWithdraws"]}}</td>
+    <td>{{row["IndustryWithdraws"]}}</td>
+    <td>{{row["AgricWithdraws"]}}</td>
+    <td>{{row["IrrigatedLand"]}}</td>
+    <td>{{row["AgricLaborForce"]}}</td>
+    <td>{{row["CattleStock"]}}</td>
+    <td>{{row["SheepStock"]}}</td>
+    <td>{{row["GoatStock"]}}</td>
+    <td>{{row["PigStock"]}}</td>
+    <td>{{row["HorseStock"]}}</td>
+    <td>{{row["BuffaloStock"]}}</td>
+    <td>{{row["CamelStock"]}}</td>
+    <td>{{row["EnergyConsumption"]}}</td>
+    <td>{{row["FuelConsumption"]}}</td>
+    <td>{{row["HydroConsumption"]}}</td>
+    <td>{{row["KnownSpecies"]}}</td>
+    <td>{{row["EndemicSpecies"]}}</td>
+    <td>{{row["BirdSpecies"]}}</td>
+    <td>{{row["EndemicBirdSpecies"]}}</td>
+    <td>{{row["PlantSpecies"]}}</td>
+    <td>{{row["EndemicPlantSpecies"]}}</td>
+    {% endfor %}
+  </tr>
+</table>
+</html>
